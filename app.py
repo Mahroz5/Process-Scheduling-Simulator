@@ -1,16 +1,12 @@
 # app.py
 
 from flask import Flask, render_template, request, jsonify
-import os
 
 app = Flask(__name__)
 
 @app.route("/")
 def index():
-    index_path = os.path.join(os.path.dirname(__file__), "index.html")
-    with open(index_path, "r") as f:
-        content = f.read()
-    return content
+    return render_template("index.html")
 
 @app.route("/simulate", methods=["POST"])
 def simulate():
@@ -76,4 +72,4 @@ def ljf(processes):
     return result
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=True, use_reloader=True)
