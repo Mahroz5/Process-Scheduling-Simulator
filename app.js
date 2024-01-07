@@ -32,7 +32,7 @@ $(document).ready(function () {
             simulationContainer.append(processElement);
     
            // Animation delay based on index
-            processElement.hide().delay(index * 1000).fadeIn(500);
+            processElement.hide().delay(waitingTime * 1000).fadeIn(500);
 
     
             // Increment timer every second
