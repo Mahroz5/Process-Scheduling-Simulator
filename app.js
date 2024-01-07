@@ -31,8 +31,9 @@ $(document).ready(function () {
             const processElement = $(`<div class="process" style="left: ${index * 100}px;">Process Id: ${processId} <br> Turnaround Time: ${completionTime}secs <br> Burst Time: ${burstTime}secs <br> Waiting Time: ${waitingTime}secs</div>`);
             simulationContainer.append(processElement);
     
-            // Animation delay based on waiting time
-            processElement.hide().delay(waitingTime * 1000).fadeIn(500);
+           // Animation delay based on index
+            processElement.hide().delay(index * 1000).fadeIn(500);
+
     
             // Increment timer every second
             timerInterval = setInterval(function () {
