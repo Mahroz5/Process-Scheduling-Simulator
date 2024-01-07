@@ -1,0 +1,50 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Process Scheduling Simulator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <script src="{{ url_for('static', filename='app.js') }}"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Topic 1: Process Scheduling Simulator</h1>
+        <form id="process-form">
+            
+            <label for="algorithm-select">Select Algorithm:</label>
+            <div class="select-wrapper">
+                <select id="algorithm-select" name="algorithm">
+                    <option value="fcfs">First-Come, First-Served (FCFS)</option>
+                    <option value="sjf">Shortest Job First (SJF)</option>
+                    <option value="ljf">Longest Job First (LJF)</option>
+                </select>
+            </div>
+            
+            <div id="process-list">             
+            </div>
+            <button type="button" id="add-process-btn">Add Process</button>
+            <div id="added-process-container">
+                <h2>Input Process Stack:</h2>
+                <ul id="added-process-list"></ul>
+            </div>
+            <br>
+            <br>
+            <button type="button" id="simulate-btn">Simulate</button>
+        </form>
+        <div id="gantt-chart-container"></div>
+        <br>
+        <h2>Completed Process Stack: </h2>
+        <div id="timer-container">Timer: <span id="timer">0</span> seconds</div>
+        <div id="simulation-container"></div>
+        
+        <div id="average-times-container"></div>
+
+        <br>
+        
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>
